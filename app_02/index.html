@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Meu site com vue </title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <nav>
+            <label for="themeBlack">
+                <input type="checkbox" :checked="themeBlack" @click="toogleTheme" name="themeBlack" id="themeBlack">Tema
+                escuro
+            </label>
+            <div class="container-fluid">
+                <img class="nav-img" src="/img/images-removebg-preview.png" alt="logo">
+                <h1 class="nav-title">Skate shop</h1>
+
+
+                <!-- maneira simples -->
+                <!-- <p class="nav">{{name}} {{lastName }}</p> -->
+                
+                <!-- maneira usando propriedade computada -->
+                <p class=" nav-p">{{fullName}} </p>
+        </nav>
+
+        <div :style="styles">
+
+            <hr>
+
+            <h3 class=" cart">Carrinho ({{cart.length}}) </h3>
+
+
+
+            <h2 class="title-shape">Shapes</h2>
+
+            <ul>
+                <li v-for="product in products">
+
+                    <p>{{product.title}}</p>
+                    <img :src="product.image" :alt="product.title" style=" max-width: 100px; border-radius: 20%;">
+                    <strong v-if="product.stars > 0">{{product.stars}}</strong>
+                    <p>{{product.description}} </p>
+
+                    <!-- <a href="#"  @click.prevent="removeCart(product)" v-if="inCart(product)"> Remove to cart </a> -->
+                    <input type="button" value="Remove to cart" @click.prevent="removeCart(product)"
+                        v-if="inCart(product)" style="width: 100px; height: 30px;">
+                    <!-- <a href="#" v-on:click.prevent="addCart(product)" v-else="inCart(product)"> Add to cart </a> -->
+                    <input type="button" value="Add to cart" v-on:click.prevent="addCart(product)"
+                        v-else="inCart(product)" style="width: 100px; height: 30px;">
+
+                </li>
+            </ul>
+            <!-- <product-detail></product-detail> // parte de outra aula -->
+        </div>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="app.js"></script>
+    </div>
+
+    <footer>
+        <img src="./img/images-removebg-preview.png" alt="rodape" >
+        <p id="copy"> &copy;copyright SkateShop 2022 </p>
+    </footer>
+
+</body>
+
+</html>
