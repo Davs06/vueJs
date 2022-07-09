@@ -27,16 +27,16 @@
 
 <script>
 
-import Tarefa from '../components/Tarefas/Tarefa.vue'
+import Tarefa from '../components/Tarefas/TarefaViws.vue'
 
   export default {
     
       
-    name: 'Home',
+    name: 'HomeViws',
 
     components: {
       Tarefa
-      /* eslint-disable */
+      
       
     },
   }
