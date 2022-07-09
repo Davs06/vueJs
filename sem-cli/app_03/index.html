@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Meu site com vue </title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <nav>
+            <label for="themeBlack">
+                <input type="checkbox" :checked="themeBlack" @click="toogleTheme" name="themeBlack" id="themeBlack">Tema
+                escuro
+            </label>
+            <div class="container-fluid">
+                <img class="nav-img" src="./img/images-removebg-preview.png" alt="logo">
+                <h1 class="nav-title">Skate shop</h1>
+
+
+                <!-- maneira simples -->
+                <!-- <p class="nav">{{name}} {{lastName }}</p> -->
+
+                <!-- maneira usando propriedade computada -->
+                <p class=" nav-p">{{fullName}} </p>
+        </nav>
+
+        <div :style="styles">
+
+            <hr>
+
+            <h3 class=" cart">Carrinho ({{cart.length}}) </h3>
+
+
+
+            <h2 class="title-shape">Shapes</h2>
+
+            <ul>
+                <li v-for="product in products">
+                    <product-detail 
+                    :product-in-cart = "inCart(cart)"
+                    :product="product">
+                    </product-detail>
+                </li>
+            </ul>
+        </div>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="app.js"></script>
+    </div>
+
+    <footer>
+        <img src="./img/images-removebg-preview.png" alt="rodape">
+        <p id="copy"> &copy;copyright SkateShop 2022 </p>
+    </footer>
+
+</body>
+
+</html>

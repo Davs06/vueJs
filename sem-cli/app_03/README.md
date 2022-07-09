@@ -1,0 +1,3 @@
+# skateshop
+
+site criado usando vueJs (constinuação do 'app1') criado de forma mais completa usand0o metodos, variaveis computadas, array...  
