@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Tarefas from '../views/Tarefas.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Tarefas',
-    component: Tarefas
+    name: 'TarefasView',
+    component: () => import( '../views/TarefasView.vue')
   },
   {
     path: '/sobre',
     name: 'Sobre',
-    component: () => import('../views/AboutView.vue')
+        component: () => import( '../views/AboutView.vue')
   }
 ]
 

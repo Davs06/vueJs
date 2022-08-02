@@ -1,5 +1,5 @@
 {
-  "name": "vue-todo",
+  "name": "vue-todo1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "register-service-worker": "^1.7.2",
-    "vue": "^2.6.14",
+    "vue-command": "^23.0.1",
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.0",
     "vuex": "^3.6.2"
