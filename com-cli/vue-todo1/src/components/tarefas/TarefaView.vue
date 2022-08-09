@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item :class="{ 'light-green lighten-4': tarefa.concluido }" @click="tarefa.concluido = !tarefa.concluido"  >
+    <v-list-item :class="{ 'light-green lighten-4': tarefa.concluido }"  >
       <!--  @click="tarefa.concluido = !tarefa.concluido" -->
       <template v-slot:default="{}">
         <v-list-item-action>
